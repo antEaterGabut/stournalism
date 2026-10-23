@@ -4,6 +4,6 @@ fitur yang wajib ada:
 - baca file apapun
 
 bagian yang wajib ada:
-- loading screen
-- home page
+- loading screen (selesai)
+- home page 
 - page per fitur

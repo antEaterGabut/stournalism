@@ -1,0 +1,49 @@
+/* masukkan jenis font random */
+@font-face {
+    font-family: "bpmfHunnin";
+    src: url(../assets/font/font_bpmf/Bpmf_Huninn/BpmfHuninn-Regular.ttf);
+}
+
+/* bagian loading metode */
+*, body, html {
+    padding: 0;
+    margin: 0;
+    font-family: "bpmfHunnin";
+}
+
+.splash-logo {
+    width: 300px;
+    height: auto;
+}
+
+.splash-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.splash-cs {
+    padding-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.splash-cs a {
+    text-decoration: none;
+    color: #239FFF;
+}
+
+.splash-cs a:link {
+    color: #239FFF;
+}
+
+.splash-cs a:hover {
+    color: #38A168;
+    transition: 0.6s ease;
+}

@@ -1,0 +1,9 @@
+fitur yang wajib ada:
+- nulis
+- jalanin musik
+- baca file apapun
+
+bagian yang wajib ada:
+- loading screen
+- home page
+- page per fitur

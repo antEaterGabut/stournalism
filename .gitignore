@@ -1,2 +1,29 @@
-# editor config
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors & IDEs
 .vscode/
+.idea/
+*.swp
+
+# Node Modules & Dependencies
+node_modules/
+
+# Environment Variables (Sangat Penting)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Build Outputs
+dist/
+build/
+.cache/

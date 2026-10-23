@@ -43,6 +43,10 @@
     color: #239FFF;
 }
 
+.splash-cs a:visited {
+    color: tomato;
+}
+
 .splash-cs a:hover {
     color: #38A168;
     transition: 0.6s ease;

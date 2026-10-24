@@ -3,7 +3,6 @@
     font-family: "bpmfHunnin";
     src: url(../assets/font/font_bpmf/Bpmf_Huninn/BpmfHuninn-Regular.ttf);
 }
-
 /* bagian loading metode */
 *, body, html {
     padding: 0;
@@ -85,3 +84,73 @@
     opacity: 1;
     visibility: visible;
 }
+
+/* inisiasi bagia konten */
+
+.container-content {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container-content.show-content {
+    opacity: 1;
+    visibility: visible;
+    padding: 20px;
+}
+
+.header-stat {
+    display: flex;
+}
+
+.priority {
+    display: flex;
+    gap: 20px;
+}
+
+.header-img {
+    filter: invert(44%) sepia(31%) saturate(638%) hue-rotate(164deg) brightness(92%) contrast(88%);
+}
+
+.priority h1 {
+    text-shadow: -2px 1px 3px rgb(0, 0, 0, 0.25);
+    font-weight:bold;
+}
+
+.main-ul {
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    right: 20px;
+    color: #4a7596;cursor: pointer;
+
+}
+
+li a {
+    text-decoration: none;
+    color: #4a7596;
+}
+
+li a:link {
+    color: grey;
+}
+
+li a:hover {
+    color: #239FFF;
+    text-decoration: underline;
+}
+
+.main-p {
+    color: #4a7596;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-stat {
+    opacity: 50%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+/* media berupa hp */

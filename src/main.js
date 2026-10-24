@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tittle = document.querySelector('.splash-tittle');
     const cs = document.querySelector('.splash-cs');
     const splashScreen = document.querySelector('.splash-screen')
+    const headerFile = document.querySelector('.container-content')
     // jalankan program
     if (logo) {
         setTimeout(() => {
@@ -19,8 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
         
         setTimeout(() => {
-            if (splashScreen) splashScreen.classList.add('screen-hidden')
-        }, 4000);
+            splashScreen.classList.add('screen-hidden');
+
+            if (headerFile) {
+                headerFile.classList.add('show-content');
+            }
+
+            setTimeout(() => {
+                splashScreen.remove();
+            }, 800);
+        }, 4000); 
+        
+
     }
 
 });

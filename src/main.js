@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 splashScreen.remove();
-            }, 800);
+            }, 600);
         }, 4000); 
         
 

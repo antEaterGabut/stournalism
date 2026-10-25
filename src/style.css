@@ -1,33 +1,27 @@
-/* masukkan jenis font random */
 @font-face {
     font-family: "bpmfHunnin";
     src: url(../assets/font/font_bpmf/Bpmf_Huninn/BpmfHuninn-Regular.ttf);
 }
 
-/* bagian loading metode */
 *, body, html {
     padding: 0;
     margin: 0;
     font-family: "bpmfHunnin";
-    box-sizing: border-box; /* Mencegah overflow padding di mobile */
+    box-sizing: border-box;
 }
 
-/* Base Layout & Responsive Background */
 body {
-    overflow-x: hidden; /* Biar gak ada scrollbar horizontal liar di HP */
+    overflow-x: hidden;
     width: 100%;
 }
 
 .splash-logo {
     width: 300px;
-    max-width: 80%; /* Agar tidak kebesaran di HP layar kecil */
+    max-width: 80%;
     height: auto;
-    
-    /* State Awal */
     opacity: 0;
     visibility: hidden;
     transform: scale(0.8);
-    
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 opacity 0.6s ease, 
                 visibility 0.6s ease;
@@ -69,25 +63,15 @@ body {
     color: #239FFF;
 }
 
-.splash-cs a:link {
-    color: #239FFF;
-}
-
-.splash-cs a:active {
-    color: tomato;
-}
-
 .splash-cs a:hover {
     color: #38A168;
     transition: 0.6s ease;
 }
 
-/* Fix Typo: 'visible' diubah ke 'visibility' */
 .splash-tittle, .splash-cs {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.6s ease-in-out, 
-                visibility 0.6s ease;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease;
 }
 
 .splash-tittle.tittle-show, .splash-cs.cs-show {
@@ -95,15 +79,13 @@ body {
     visibility: visible;
 }
 
-/* inisiasi bagian konten */
-
 .container-content {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.6s ease-in-out, visibility 0.6s ease;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -112,15 +94,14 @@ body {
 .container-content.show-content {
     opacity: 1;
     visibility: visible;
-    padding: 20px;
 }
 
 .header-stat {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     width: 100%;
+    gap: 15px;
 }
 
 .priority {
@@ -146,6 +127,7 @@ body {
     text-shadow: -2px 1px 3px rgba(0, 0, 0, 0.25);
     font-weight: bold;
     font-size: 1.8rem;
+    white-space: nowrap;
 }
 
 .main-ul {
@@ -169,9 +151,9 @@ li a:hover {
 
 .main-p {
     color: #4a7596;
-    justify-content: center;
     text-align: center;
     padding-top: 15vh;
+    padding-bottom: 120px;
     font-size: 1.1rem;
     line-height: 1.6;
 }
@@ -179,18 +161,16 @@ li a:hover {
 .bg-stat {
     opacity: 0.5;
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 40vh;
+    object-fit: cover;
+    object-position: bottom;
     z-index: -1;
-    max-width: 100%; /* Biar gak meluap keluar layar HP */
-    height: auto;
+    pointer-events: none;
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
-   ========================================== */
-
-/* 1. Tablet View (Ukuran Layar < 768px) */
 @media screen and (max-width: 768px) {
     .container-content.show-content {
         padding: 15px;
@@ -206,11 +186,10 @@ li a:hover {
     }
 
     .bg-stat {
-        width: 80%; /* Dikecilkan sedikit di tablet */
+        max-height: 35vh;
     }
 }
 
-/* 2. Mobile View (Ukuran Layar HP < 480px) */
 @media screen and (max-width: 480px) {
     .splash-cs {
         bottom: 15px;
@@ -218,22 +197,25 @@ li a:hover {
         font-size: 0.85rem;
     }
 
+    .header-stat {
+        flex-wrap: wrap;
+    }
+
     .priority {
         gap: 10px;
     }
 
     .header-img {
-        height: 28px; /* Ikon hamburger lebih kecil di HP */
+        height: 28px;
     }
 
     .priority h1 {
-        font-size: 1.2rem; /* Judul disesuaikan agar tidak patah baris */
+        font-size: 1.2rem;
     }
 
-    /* Menu Navigasi di HP */
     .main-ul {
-        gap: 10px;
-        font-size: 0.9rem;
+        gap: 12px;
+        font-size: 0.85rem;
     }
 
     .main-p {
@@ -244,7 +226,7 @@ li a:hover {
     }
 
     .bg-stat {
-        width: 100%;
-        opacity: 0.3; /* Agak dipudarkan lagi biar teks tetap terbaca di HP */
+        max-height: 30vh;
+        opacity: 0.4;
     }
 }

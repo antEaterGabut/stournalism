@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bilbo+Swash+Caps&family=Bpmf+Huninn&family=Comic+Relief:wght@400;700&family=Imprima&display=swap');
+
+/*penataan bagian body*/
+body {
+    margin: 0;
+    background-color: #EAF3DD;
+    color: #276F27;
+    font-family: 'imprima', sans-serif;
+    font-size: 19px;
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #8ECA3C;
+    box-shadow: 0 2px 4px rgba(119, 59, 202, 0.1);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #276F27;
+}
+
+.navbar li a:hover {
+    color: #BBDC12;
+    text-decoration: underline;
+}
+
+.vertical-navbar {
+    position: flex;
+    width: 200px;
+    height: 100%;
+    background-color: #8ECA3C;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.vertical-navbar li {
+    list-style: none;
+    padding: 9px;
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        font-size: 16px;
+    }
+}

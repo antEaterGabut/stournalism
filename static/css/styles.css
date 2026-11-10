@@ -39,11 +39,12 @@ body {
 
 .vertical-navbar {
     position: flex;
+    flex-direction: column;
     width: 200px;
     height: 100%;
     background-color: #8ECA3C;
     position: fixed;
-    overflow-y: auto;
+    overflow-y: visible;
 }
 
 .vertical-navbar li {
@@ -51,6 +52,7 @@ body {
     padding: 9px;
 }
 
+/*kompatibilitas di mobile*/
 @media (max-width: 600px) {
     body {
         flex-direction: column;

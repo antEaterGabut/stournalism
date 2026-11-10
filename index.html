@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stornalism</title>
+
+    <!--bagian pengaturan favicon-->
     <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="./static/css/music.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="./assets/icon/favicon_io/site.webmanifest">
+
+    <!--bagian logika (javascript)-->
+    <script src="./static/js/main.js"></script>
+    <script src="./static/js/music.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,9 +37,19 @@
     <div class="vertical-navbar">
         <ul>
             <li>Journaling</li>
-            <li>Music</li>
+            <li class="music-link">Music
+                <audio id="global-audio" src="./assets/saddes_les_for.mp3" loop></audio>
+                <div class="music-list">
+                    <a onclick="playMusic(1)">Test Track 1</a>
+                    <a onclick="playMusic(2)">Test Track 2</a>
+                    <a onclick="playMusic(3)">Test Track 3</a>
+                </div>
+            </li>
             <li>Donate</li>
         </ul>
     </div>
+    <main>
+        
+    </main>
 </body>
 </html>

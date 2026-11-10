@@ -12,7 +12,7 @@
     left: 100px;
     box-shadow: 0px 8px 16px 0px rgba(156, 23, 244, 0.2);
     top: 1;
-    min-width: 160px;
+    min-width: 200px;
     z-index: 100;
 }
 
@@ -21,7 +21,6 @@
     padding: 10px;
     text-decoration: none;
     color: #276F27;
-    
 }
 
 .music-list a:hover {

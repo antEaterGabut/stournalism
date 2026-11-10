@@ -38,11 +38,12 @@
         <ul>
             <li>Journaling</li>
             <li class="music-link">Music
-                <audio id="global-audio" src="./assets/saddes_les_for.mp3" loop></audio>
+                <audio id="global-audio" loop></audio>
                 <div class="music-list">
-                    <a onclick="playMusic(1)">Test Track 1</a>
-                    <a onclick="playMusic(2)">Test Track 2</a>
-                    <a onclick="playMusic(3)">Test Track 3</a>
+                <!-- Gunakan data-src untuk menyimpan lokasi file audio -->
+                    <a href="#" data-src="./assets/music/saddes_les_for.mp3" onclick="playMusic(this); return false;">Track 1 - Last Memory</a>
+                    <a href="#" data-src="./assets/music/chill_day.mp3" onclick="playMusic(this); return false;">Track 2 - Chill Day</a>
+                    <a href="#" data-src="./assets/music/silver_bell.mp3" onclick="playMusic(this); return false;">Track 3 - Silver Bell</a>
                 </div>
             </li>
             <li>Donate</li>

@@ -9,6 +9,100 @@ body {
     font-size: 19px;
 }
 
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #EAF3DD; /* Warna latar polos stornalism */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Transisi memudar untuk seluruh layar loading */
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- ANIMASI 1: LOGO (Scale besar lalu normal) --- */
+.logo-anim {
+    width: 200px;
+    height: auto;
+    opacity: 0; /* Sembunyi awal (layar polos) */
+    animation: popScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 0.3s; /* Jeda layar polos di awal */
+}
+
+@keyframes popScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.25); /* Membesar sedikit melewati ukuran asli */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Kembali normal */
+    }
+}
+
+/* --- ANIMASI 2: TEKS (Mengikuti dari bawah) --- */
+.text-anim {
+    color: #276F27;
+    font-family: 'Imprima', sans-serif;
+    font-size: 50px;
+    margin: 0;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+    animation-delay: 0.9s; /* Muncul setelah logo mulai pas ukurannya */
+}
+
+.text-anim-2 {
+    display: block; /* WAJIB kalau pakai span / tag inline */
+    color: #276F27;
+    font-size: 18px;
+    margin-top: 5px;
+
+    /* KUNCI UTAMA ANIMASI */
+    opacity: 0; /* Sembunyi dulu di awal */
+    animation: fadeSlideUp 0.6s ease forwards;
+    
+    /* Beri delay lebih lama dari teks pertama (misal teks 1 = 0.9s, teks 2 = 1.3s) */
+    animation-delay: 1.3s; 
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- ANIMASI 3: MEMUDAR & MUNCUL HOME PAGE --- */
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+body.loading-active {
+    overflow: hidden; /* Matikan scroll saat loading */
+}
+
 .header {
     position: relative;
     z-index: 10;
@@ -57,6 +151,101 @@ body {
 }
 /*kompatibilitas di mobile*/
 @media (max-width: 600px) {
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #EAF3DD; /* Warna latar polos stornalism */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Transisi memudar untuk seluruh layar loading */
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- ANIMASI 1: LOGO (Scale besar lalu normal) --- */
+    .logo-anim {
+        width: 200px;
+        height: auto;
+        opacity: 0; /* Sembunyi awal (layar polos) */
+        animation: popScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        animation-delay: 0.3s; /* Jeda layar polos di awal */
+    }
+
+    @keyframes popScale {
+        0% {
+            opacity: 0;
+            transform: scale(0.2);
+        }
+        70% {
+            opacity: 1;
+            transform: scale(1.25); /* Membesar sedikit melewati ukuran asli */
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1); /* Kembali normal */
+        }
+    }
+
+/* --- ANIMASI 2: TEKS (Mengikuti dari bawah) --- */
+    .text-anim {
+        color: #276F27;
+        font-family: 'Imprima', sans-serif;
+        font-size: 50px;
+        margin: 0;
+        opacity: 0;
+        animation: fadeSlideUp 0.6s ease forwards;
+        animation-delay: 0.9s; /* Muncul setelah logo mulai pas ukurannya */
+    }
+
+    .text-anim-2 {
+        display: block; /* WAJIB kalau pakai span / tag inline */
+        color: #276F27;
+        font-size: 18px;
+        margin-top: 5px;
+
+    /* KUNCI UTAMA ANIMASI */
+        opacity: 0; /* Sembunyi dulu di awal */
+        animation: fadeSlideUp 0.6s ease forwards;
+    
+    /* Beri delay lebih lama dari teks pertama (misal teks 1 = 0.9s, teks 2 = 1.3s) */
+        animation-delay: 1.3s; 
+    }
+
+    @keyframes fadeSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+/* --- ANIMASI 3: MEMUDAR & MUNCUL HOME PAGE --- */
+    #loading-screen.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    body.loading-active {
+        overflow: hidden; /* Matikan scroll saat loading */
+    }
+
+
     .header {
         flex-direction: column;
         align-items: center;

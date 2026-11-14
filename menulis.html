@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stornalism - Write</title>
+    <link rel="stylesheet" href="./static/css/menulis.css">
+</head>
+<body class="page-write">
+    <header>
+        <div class="header-container write-header">
+            <!-- Toolbar Formatting U, B, I -->
+            <div class="ubi-toolbar">
+                <button type="button" data-cmd="underline" title="Underline (Ctrl+U)"><u>U</u></button>
+                <button type="button" data-cmd="bold" title="Bold (Ctrl+B)"><b>B</b></button>
+                <button type="button" data-cmd="italic" title="Italic (Ctrl+I)"><i>I</i></button>
+            </div>
+            <ul>
+                <li><a href="./index.html" class="link-target">Home</a></li>
+                <li><a href="#" ><span class="obj-target">Menu</span></a></li>
+                <li><a href="#" class="link-target">About</a></li>
+                <li><a href="#" class="link-target">Service</a></li>
+                <li><a href="#" class="link-target">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="paper-container">
+        <div class="paper-sheet">
+            <div class="paper-header">
+                <div class="title-group">
+                    <label for="judul">Judul:</label>
+                    <input type="text" id="judul" placeholder="--">
+                </div>
+                <div class="date-group">
+                    <label for="tgl">tgl:</label>
+                    <input type="text" id="tgl" placeholder="--/--/--">
+                </div>
+            </div>
+
+            <div class="empty-line"></div>
+
+            <!-- Area Tulis Rich Text Bergaris -->
+            <div id="isi-jurnal" class="editor-area" contenteditable="true" data-placeholder="Mulai tulis ceritamu di sini..."></div>
+
+            <div class="save-status" id="status-simpan">Semua perubahan tersimpan</div>
+        </div>
+    </main>
+
+    <script src="./static/js/menulis.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bilbo+Swash+Caps&family=Bpmf+Huninn&family=Comic+Relief:wght@400;700&family=Imprima&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+.page-write {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #EDDA5E;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header & Toolbar U B I --- */
+.header-container.write-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ubi-toolbar {
+    background-color: #6b8e23;
+    padding: 16px 40px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    display: flex;
+    gap: 20px;
+}
+
+.ubi-toolbar button {
+    background: transparent;
+    border: 1.5px solid transparent;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1.4rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ubi-toolbar button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.ubi-toolbar button.active {
+    background-color: #ffffff;
+    color: #6b8e23;
+}
+
+.write-header ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    padding-left: 0;
+    margin: 22px 0 28px 0;
+}
+
+.header-container a {
+    color: #4d6b22;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.obj-target {
+    background-color: #F4BE38;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 2px solid #2D8CFF;
+}
+
+.link-target:hover {
+    background-color: #F4BE38;
+    border-color: #2D8CFF;
+}
+
+/* --- Lembar Kertas Catatan --- */
+.paper-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px 60px 20px;
+}
+
+.paper-sheet {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 720px;
+    min-height: 85vh;
+    padding: 40px 50px;
+    box-shadow: -14px 14px 28px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+}
+
+.paper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid #4d6b22;
+    padding-bottom: 4px;
+}
+
+.title-group {
+    display: flex;
+    align-items: baseline;
+    flex: 1;
+    gap: 8px;
+}
+
+.title-group label {
+    font-size: 1.6rem;
+    color: #4d6b22;
+}
+
+.title-group input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #4d6b22;
+    width: 100%;
+    background: transparent;
+}
+
+.date-group {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #4d6b22;
+}
+
+.date-group input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    width: 85px;
+    font-size: 0.95rem;
+    color: #4d6b22;
+    background: transparent;
+}
+
+.empty-line {
+    height: 36px;
+    border-bottom: 1.5px solid #4d6b22;
+}
+
+/* --- Area Editor Rich Text Bergaris --- */
+.editor-area {
+    width: 100%;
+    min-height: 540px;
+    outline: none;
+    color: #4d6b22;
+    font-size: 1rem;
+    line-height: 36px;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 34.5px,
+        #4d6b22 34.5px,
+        #4d6b22 36px
+    );
+    word-wrap: break-word;
+}
+
+.editor-area:empty::before {
+    content: attr(data-placeholder);
+    color: rgba(77, 107, 34, 0.45);
+    pointer-events: none;
+}
+
+.save-status {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: #4d6b22;
+    opacity: 0.75;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .paper-sheet {
+        padding: 32px 30px; /* Kurangi padding dalam kertas agar ruang tulis lebih lega */
+        box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .title-group label {
+        font-size: 1.35rem;
+    }
+
+    .title-group input {
+        font-size: 1.3rem;
+    }
+}
+
+/* =========================================
+   RESPONSIF MOBILE / HP (Layar <= 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    /* Toolbar sticky di atas layar HP agar mudah dijangkau jempol saat ngetik panjang */
+    .ubi-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 10px 28px;
+        gap: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .ubi-toolbar button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .write-header ul {
+        gap: 8px 10px;
+        margin: 16px 0 20px 0;
+        font-size: 0.9rem;
+    }
+
+    .header-container a {
+        padding: 6px 10px;
+    }
+
+    .obj-target {
+        padding: 6px 12px;
+    }
+
+    .paper-container {
+        padding: 0 12px 40px 12px;
+    }
+
+    .paper-sheet {
+        padding: 24px 18px;
+        min-height: 75vh;
+        border-radius: 8px;
+    }
+
+    /* Susun Judul di atas dan Tanggal di bawahnya agar judul panjang tidak terpotong */
+    .paper-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .title-group label {
+        font-size: 1.2rem;
+    }
+
+    .title-group input {
+        font-size: 1.15rem;
+    }
+
+    .date-group {
+        justify-content: flex-end;
+        font-size: 0.85rem;
+    }
+
+    .date-group input {
+        width: 75px;
+        font-size: 0.85rem;
+        text-align: right;
+    }
+
+    /* Rapatkan sedikit tinggi baris di layar HP agar lebih muat banyak teks */
+    .empty-line {
+        height: 32px;
+    }
+
+    .editor-area {
+        min-height: 420px;
+        font-size: 0.95rem;
+        line-height: 32px; /* Tetap sinkron dengan 32px di bawah */
+        background-image: repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 30.5px,
+            #4d6b22 30.5px,
+            #4d6b22 32px
+        );
+    }
+}

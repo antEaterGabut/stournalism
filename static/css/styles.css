@@ -1,303 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bilbo+Swash+Caps&family=Bpmf+Huninn&family=Comic+Relief:wght@400;700&family=Imprima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bilbo+Swash+Caps&family=Bpmf+Huninn&family=Comic+Relief:wght@400;700&family=Imprima&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-/*penataan bagian body*/
+body * {
+    font-family: 'Josefin Sans', 'Sans Serif';
+}
+
 body {
-    margin: 0;
-    background-color: #EAF3DD;
-    color: #276F27;
-    font-family: 'imprima', sans-serif;
-    font-size: 19px;
-}
-
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #EAF3DD; /* Warna latar polos stornalism */
-    z-index: 9999;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Transisi memudar untuk seluruh layar loading */
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.loading-content {
-    display: flex;
+    font-size: 14px;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    color: #71951E;
+    background-color: #EDDA5E;
 }
 
-/* --- ANIMASI 1: LOGO (Scale besar lalu normal) --- */
-.logo-anim {
-    width: 200px;
-    height: auto;
-    opacity: 0; /* Sembunyi awal (layar polos) */
-    animation: popScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    animation-delay: 0.3s; /* Jeda layar polos di awal */
+h1 {
+    font-size: 48px;
+    margin-bottom: 0; /* Perkecil jarak bawah h1 (ganti 0 jika ingin menempel rapat) */
 }
 
-@keyframes popScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.2);
-    }
-    70% {
-        opacity: 1;
-        transform: scale(1.25); /* Membesar sedikit melewati ukuran asli */
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1); /* Kembali normal */
-    }
+h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: #ABC276;  /* Wajib dinolkan karena h2 punya margin atas bawaan browser */
 }
 
-/* --- ANIMASI 2: TEKS (Mengikuti dari bawah) --- */
-.text-anim {
-    color: #276F27;
-    font-family: 'Imprima', sans-serif;
-    font-size: 50px;
-    margin: 0;
-    opacity: 0;
-    animation: fadeSlideUp 0.6s ease forwards;
-    animation-delay: 0.9s; /* Muncul setelah logo mulai pas ukurannya */
+.header-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #EDDA5E;
 }
 
-.text-anim-2 {
-    display: block; /* WAJIB kalau pakai span / tag inline */
-    color: #276F27;
-    font-size: 18px;
-    margin-top: 5px;
-
-    /* KUNCI UTAMA ANIMASI */
-    opacity: 0; /* Sembunyi dulu di awal */
-    animation: fadeSlideUp 0.6s ease forwards;
-    
-    /* Beri delay lebih lama dari teks pertama (misal teks 1 = 0.9s, teks 2 = 1.3s) */
-    animation-delay: 1.3s; 
-}
-
-@keyframes fadeSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- ANIMASI 3: MEMUDAR & MUNCUL HOME PAGE --- */
-#loading-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-body.loading-active {
-    overflow: hidden; /* Matikan scroll saat loading */
-}
-
-.header {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #8ECA3C;
-    box-shadow: 0 2px 4px rgba(119, 59, 202, 0.1);
-}
-
-.navbar ul {
+.header-container ul{
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: 20px;
+    justify-content: right;
+    padding: 0;
 }
 
-.navbar li a {
+.header-container li a {
     text-decoration: none;
-    color: #276F27;
+    color: #4D6B1D;
 }
 
-.navbar li a:hover {
-    color: #BBDC12;
-    text-decoration: underline;
+.link-target:hover {
+    background-color: #F4BE38;
+    padding: 10px;
+    border: 3px solid #2D8CFF;
+    border-radius: 20px;
+    transition: background-color 0.6s ease-in-out, padding 0.1s ease-in-out;
 }
 
-.vertical-navbar {
-    position: flex;
+.obj-target {
+    background-color: #F4BE38;
+    padding: 10px;
+    border: 3px solid #2D8CFF;
+    border-radius: 20px;
+}
+
+
+main {
+    padding-left: 70px;
+}
+
+.main-contain {
+    display: flex;
+}
+
+.describe-contain {
+    font-size: 16px;
+    margin-bottom: 50px;
+    max-width: 50ch;
+    text-align: justify;
+}
+
+.main-contain ul {
+    display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 100%;
-    background-color: #8ECA3C;
-    position: fixed;
-    overflow-y: visible;
-}
-
-.vertical-navbar li {
+    gap: 20px;
     list-style: none;
-    padding: 9px;
+    padding-left: 0;
+    width: fit-content;
+    text-align: center;
 }
 
-.vertical-navbar li:hover {
-    cursor: pointer;
+.main-contain li {
+    border-radius: 25px;
 }
-/*kompatibilitas di mobile*/
-@media (max-width: 600px) {
-#loading-screen {
+
+.main-contain li a {
+    text-decoration: none;
+    color:#4D6B1D;
+}
+
+.main-contain li:hover {
+    transform: scale(1.07);
+    background-color: #f0e59c;
+    border: 2px solid #2D8CFF;
+    transition: transform 0.2s ease-in, baskground-color 0.6s ease-in-out;
+}
+
+.main-image {
+    display: block;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #EAF3DD; /* Warna latar polos stornalism */
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Transisi memudar untuk seluruh layar loading */
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    bottom: 0;
+    right: 4%;
+    width: 45%;
+    max-width: 240px;
+    height: auto;
+
 }
 
-.loading-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-/* --- ANIMASI 1: LOGO (Scale besar lalu normal) --- */
-    .logo-anim {
-        width: 200px;
-        height: auto;
-        opacity: 0; /* Sembunyi awal (layar polos) */
-        animation: popScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        animation-delay: 0.3s; /* Jeda layar polos di awal */
+@media (max-width: 768px) {
+    header {
+        padding: 14px 24px;
     }
 
-    @keyframes popScale {
-        0% {
-            opacity: 0;
-            transform: scale(0.2);
-        }
-        70% {
-            opacity: 1;
-            transform: scale(1.25); /* Membesar sedikit melewati ukuran asli */
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1); /* Kembali normal */
-        }
+    main {
+        padding: 20px 36px 60px 36px;
     }
 
-/* --- ANIMASI 2: TEKS (Mengikuti dari bawah) --- */
-    .text-anim {
-        color: #276F27;
-        font-family: 'Imprima', sans-serif;
-        font-size: 50px;
-        margin: 0;
-        opacity: 0;
-        animation: fadeSlideUp 0.6s ease forwards;
-        animation-delay: 0.9s; /* Muncul setelah logo mulai pas ukurannya */
+    h1 {
+        font-size: 40px;
     }
 
-    .text-anim-2 {
-        display: block; /* WAJIB kalau pakai span / tag inline */
-        color: #276F27;
-        font-size: 18px;
-        margin-top: 5px;
-
-    /* KUNCI UTAMA ANIMASI */
-        opacity: 0; /* Sembunyi dulu di awal */
-        animation: fadeSlideUp 0.6s ease forwards;
-    
-    /* Beri delay lebih lama dari teks pertama (misal teks 1 = 0.9s, teks 2 = 1.3s) */
-        animation-delay: 1.3s; 
+    .describe-contain {
+        max-width: 44ch;
+        font-size: 15px;
     }
 
-    @keyframes fadeSlideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-/* --- ANIMASI 3: MEMUDAR & MUNCUL HOME PAGE --- */
-    #loading-screen.hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    body.loading-active {
-        overflow: hidden; /* Matikan scroll saat loading */
-    }
-
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0px 2px 6px rgba(119, 59, 202, 0.2);
-    }
-
-    .header h1 {
-        background-color: rgba(187, 220, 18, 0.45);
-        padding: 5px;
-        padding-left: 15px;
-        padding-right: 15px;
-        border-radius: 40px;
-        margin: 0;
-        margin-top: 10px;
-    }
-
-    .navbar ul {
-        margin: 0;
-        padding: 0;
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .vertical-navbar {
-        display: flex;
-        width: 100%;
-        height: auto;
-        position: relative;
-        font-size: 14px;
+    .main-image {
+        max-width: 180px;
+        right: 2%;
         opacity: 0.85;
-        box-shadow: 0px 2px 4px rgba(119, 59, 202, 0.5);
+    }
+}
+
+/* =========================================
+   RESPONSIF MOBILE / HP (Layar <= 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 12px;
     }
 
-    .vertical-navbar li {
-        display: block;
-        flex-direction: row;
-        float: left;
-        padding: 10px;
-        margin-bottom: 0px;
-        margin-top: 0px;
-    }
-
-    .vertical-navbar ul {
-        display: flex;
+    .header-container ul {
         justify-content: center;
-        padding: 0;
-        padding-left: 0;
-        margin: 0;
+        gap: 6px 8px;
     }
 
-    .vertical-navbar li:hover {
-        background-color: #BBDC12;
-        opacity: 1;
+    .header-container li a {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .obj-target {
+        padding: 6px 12px;
+    }
+
+    main {
+        padding: 16px 24px 80px 24px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 17px;
+        margin-bottom: 24px;
+    }
+
+    .describe-contain {
+        font-size: 14.5px;
+        line-height: 1.65;
+        margin-bottom: 32px;
+        max-width: 100%;
+    }
+
+    /* Tombol melebar penuh di HP agar mudah ditekan jempol */
+    .main-contain ul {
+        width: 100%;
+    }
+
+    .main-contain li {
+        width: 100%;
+    }
+
+    /* Pohon meredup halus di latar belakang agar teks & tombol HP terbaca jelas */
+    .main-image {
+        max-width: 150px;
+        right: -10px;
+        opacity: 0.25;
     }
 }

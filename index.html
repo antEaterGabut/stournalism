@@ -4,64 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stornalism</title>
-
-    <!--bagian pengaturan favicon-->
     <link rel="stylesheet" href="./static/css/styles.css">
-    <link rel="stylesheet" href="./static/css/music.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./assets/icon/favicon_io/site.webmanifest">
-
-    <!--bagian logika (javascript)-->
-    <script src="./static/js/main.js"></script>
-    <script src="./static/js/loadingScreen.js" defer></script>
-    <script src="./static/js/music.js" defer></script>
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="loading-content">
-            <img src="./assets/icon/favicon_io/android-chrome-192x192.png" alt="favicon" class="logo-anim" >
-            <h1 style="font-family: 'Bilbo Swash Caps', cursive;" class="text-anim">Stornalism</h1>
-            <p class="text-anim-2">
-                semoga web ini membantumu!
-            </p>
-        </div>
-    </div>
     <header>
-        <div class="header">
-            <div class="h1">
-                <h1 style="font-family: 'Bilbo Swash Caps', cursive; font-size: 38px;">Stornalism</h1>
-            </div>
-            <div class="navbar">
-                <ul>
-                    <li><a href="./index.html"><strong>Home</strong></a></li>
-                    <li><strong>/</strong></li>
-                    <li><a href="./about.html"><strong>About</strong></a></li>
-                    <li><strong>/</strong></li>
-                    <li><a href="./services.html"><strong>Contact</strong></a></li>
-                </ul>
-            </div>
+        <div class="header-container">
+            <div></div>
+            <ul>
+                <li><a href="#"><span class="obj-target">Home</span></a></li>
+                    <li><a href="#" class="link-target">Menu</a></li>
+                    <li><a href="#" class="link-target">About</a></li>
+                    <li><a href="#" class="link-target">Service</a></li>
+                    <li><a href="#" class="link-target">Contact</a></li>
+            </ul>
         </div>
     </header>
-    <div class="vertical-navbar">
-        <ul>
-            <li>Journaling</li>
-            <li class="music-link">Music
-                <audio id="global-audio" loop></audio>
-                <div class="music-list">
-                <!-- Gunakan data-src untuk menyimpan lokasi file audio -->
-                    <a href="#" data-src="./assets/music/saddes_les_for.mp3" onclick="playMusic(this); return false;">Track 1 - Last Memory</a>
-                    <a href="#" data-src="./assets/music/chill_day.mp3" onclick="playMusic(this); return false;">Track 2 - Chill Day</a>
-                    <a href="#" data-src="./assets/music/silver_bell.mp3" onclick="playMusic(this); return false;">Track 3 - Silver Bell</a>
-                    <a href="#" data-src="./assets/music/coldPlay.mp3" onclick="playMusic(this); return false;">Track 4 - Cold Play</a>
-                </div>
-            </li>
-            <li>Donate</li>
-        </ul>
-    </div>
     <main>
-        
+        <div class="main-contain">
+            <div class="tittle-contain">
+                <div class="judul-utama">
+                    <h1>Stornalism</h1>
+                    <h2>Journaling of Everything</h2>
+                </div>
+                <p class="describe-contain">Stornalism hadir sebagai ruang digital hibrida yang menggabungkan layanan jasa profesional dengan wadah journaling pribadi dalam satu platform yang intuitif. Di satu sisi, situs web ini memfasilitasi berbagai kebutuhan jasa kepenulisan maupun kreativitas secara terstruktur, sementara di sisi lain menyediakan kanvas virtual yang personal untuk menuangkan gagasan, catatan harian, maupun refleksi diri. Perpaduan dua fungsi utama ini menjadikan Stornalism bukan sekadar tempat bertransaksi layanan, melainkan rumah bagi para pemikir dan penulis untuk produktif sekaligus berekspresi tanpa batasan teknis yang rumit.</p>
+                <div class="list-contain">
+                    <ul>
+                        <li style="background: linear-gradient(to right, #EDDA5E, #71951E);
+                        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); padding: 10px;"><a href="./menulis.html">Mulai Menulis</a></li>
+                        <li style="border: 2px solid #71951E; padding: 11px;"><a href="#">Dengarkan Musik</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/bg/simple_forest.png" alt="simple_forest" class="main-image">
     </main>
 </body>
 </html>
